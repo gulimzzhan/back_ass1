@@ -4,59 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration or Login Form</title>
+    <title>Форма Регистрации или Входа</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <div class="wrapper">
+        <!-- Форма Регистрации -->
         <div id="registrationForm">
-            <h2>Registration</h2>
+            <h2>Регистрация</h2>
             <form action="/register" method="post" id="registerForm" onsubmit="return registerUser()">
+                <!-- Поле для ввода имени -->
                 <div class="input-box">
-                    <input type="text" name="name" placeholder="Enter your name" required>
+                    <input type="text" name="name" placeholder="Введите ваше имя" required>
                 </div>
+                <!-- Поле для ввода электронной почты -->
                 <div class="input-box">
-                    <input type="text" name="email" placeholder="Enter your email" required>
+                    <input type="text" name="email" placeholder="Введите ваш email" required>
                 </div>
+                <!-- Поле для ввода пароля -->
                 <div class="input-box">
-                    <input type="password" name="password" placeholder="Create password" required>
+                    <input type="password" name="password" placeholder="Создайте пароль" required>
                 </div>
+                <!-- Поле для подтверждения пароля -->
                 <div class="input-box">
-                    <input type="password" name="confirmPassword" placeholder="Confirm password" required>
+                    <input type="password" name="confirmPassword" placeholder="Подтвердите пароль" required>
                 </div>
+                <!-- Поле для согласия с условиями -->
                 <div class="policy">
                     <input type="checkbox" required>
-                    <h3>I accept all terms & conditions</h3>
+                    <h3>Я принимаю все условия и положения</h3>
                 </div>
+                <!-- Кнопка отправки формы регистрации -->
                 <div class="input-box button">
-                    <input type="submit" value="Register Now">
+                    <input type="submit" value="Зарегистрироваться сейчас">
                 </div>
+                <!-- Сообщение о наличии аккаунта с возможностью перехода к форме входа -->
                 <div class="text">
-                    <h3>Already have an account? <a href="#" onclick="toggleForm('loginForm')">Login now</a></h3>
+                    <h3>Уже есть аккаунт? <a href="#" onclick="toggleForm('loginForm')">Войдите сейчас</a></h3>
                 </div>
             </form>
         </div>
 
+        <!-- Форма Входа -->
         <div id="loginForm" style="display: none;">
-            <h2>Login</h2>
+            <h2>Вход</h2>
             <form action="/login" method="post" id="loginForm" onsubmit="return loginUser()">
+                <!-- Поле для ввода имени пользователя (email) -->
                 <div class="input-box">
-                    <input type="text" name="username" placeholder="Enter your username" required>
+                    <input type="text" name="username" placeholder="Введите ваше имя пользователя" required>
                 </div>
+                <!-- Поле для ввода пароля -->
                 <div class="input-box">
-                    <input type="password" name="password" placeholder="Enter your password" required>
+                    <input type="password" name="password" placeholder="Введите ваш пароль" required>
                 </div>
+                <!-- Кнопка отправки формы входа -->
                 <div class="input-box button">
-                    <input type="submit" value="Login">
+                    <input type="submit" value="Войти">
                 </div>
+                <!-- Сообщение о возможности регистрации с переходом к форме регистрации -->
                 <div class="text">
-                    <h3>Don't have an account? <a href="#" onclick="toggleForm('registrationForm')">Register now</a></h3>
+                    <h3>Нет аккаунта? <a href="#" onclick="toggleForm('registrationForm')">Зарегистрируйтесь сейчас</a></h3>
                 </div>
             </form>
         </div>
     </div>
 
+    <!-- Подключение скрипта для переключения между формами -->
     <script src="./js/index.js"></script>
 </body>
 
